@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20170227204058) do
     t.text     "body"
     t.integer  "user_id"
     t.text     "summary"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "comments_count"
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
@@ -39,8 +40,9 @@ ActiveRecord::Schema.define(version: 20170227204058) do
     t.string   "user_name"
     t.string   "email"
     t.text     "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "posts_count"
   end
 
   add_foreign_key "comments", "posts"
